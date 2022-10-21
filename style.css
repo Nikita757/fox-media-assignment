@@ -1,0 +1,153 @@
+@keyframes myAnim {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  font-size: 100%;
+  display: flex;
+  flex-direction: column;
+  max-width: 100%;
+  height: 2500px;
+  margin: 0;
+  padding: 0.5em;
+  color: #111;
+  background: #000;
+  font-family: sans-serif;
+}
+
+.section-headline {
+  font-size: 1.5em;
+  margin: 0;
+  padding: 0.5em 0;
+  font-weight: normal;
+  letter-spacing: 0.015em;
+}
+
+.main-header,
+.main-footer {
+  min-height: 100px;
+}
+
+.content-aside,
+.content-article,
+.main-header,
+.main-footer {
+  max-width: 100%;
+  padding: 0.5em;
+  margin-bottom: 0.5em;
+  border: 1px solid #e3efff;
+  border-radius: 0.5em;
+}
+
+.main-header {
+  background: #8c66ff;
+}
+
+.main-footer {
+  margin-bottom: 0;
+  background: #57a2ff;
+}
+
+.main-content {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.content-aside {
+  min-height: 100px;
+  background: #e3c500;
+}
+
+.content-article {
+  flex-grow: 1;
+  background: #ffa21f;
+}
+
+.scroll-up-wrapper {
+  position: fixed;
+  bottom: 1%;
+  right: 1%;
+  white-space: nowrap;
+  margin-right: 1rem;
+}
+
+.scroll-up-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.35rem;
+  width: 2rem;
+  height: 2rem;
+  background-color: #FFA21F;
+  border: solid 2px;
+  border-radius: 50%;
+  cursor: pointer;
+  transform-origin: 50% 0;
+  opacity: 1;
+  transition: opacity 1s ease-in-out;
+}
+
+.scroll-up-label {
+  display: none;
+}
+
+.scroll-up-btn[disabled] {
+  cursor: default;
+}
+
+.scroll-up-btn.fade {
+  opacity: 0;
+}
+
+.scroll-up-arrow {
+  font-size: large;
+}
+
+.scroll-up-btn:hover {
+  color: #14004e;
+  background-color: #fff;
+  box-shadow: 2px 2px rgba(0, 0, 0, 0.5);
+  transform: scale(1.025);
+}
+
+@media screen and (min-width: 992px){
+  .main-content {
+    flex-direction: row-reverse;
+    width: 100%;
+    margin: auto;
+    max-width: 1200px;
+  }
+
+  .scroll-up-wrapper {
+    right: 1%;
+  }
+
+  .scroll-up-btn {
+    width: auto;
+    height: auto;
+    border-radius: 25px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .scroll-up-label {
+    display: inline-block;
+  }
+}
